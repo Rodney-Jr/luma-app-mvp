@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  backend:
+    image: ghcr.io/Rodney-Jr/luma-backend:latest
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - luma_data:/data
+
+  frontend:
+    image: ghcr.io/Rodney-Jr/luma-frontend:latest
+    restart: always
+    ports:
+      - "80:80"
+
+volumes:
+  luma_data:
+# Replace YOUR_GH_USERNAME with your actual GitHub username in the backend image path.
